@@ -1,0 +1,29 @@
+###
+GET http://localhost/api/gm
+
+###
+GET http://localhost/api/gm/99689a7f-177d-4e6c-8f6e-dbaa7458c713
+
+###
+POST http://localhost/api/gm
+Content-Type: application/json
+
+{
+  "corpName": "GM AUTO",
+  "director": "Mirkamol",
+  "home": 10,
+  "street": "Izboskan",
+  "city": "Asaka"
+}
+
+###
+PUT http://localhost:80/api/gm/99689a7f-177d-4e6c-8f6e-dbaa7458c713
+Content-Type: application/json
+
+{
+  "corpName": "GM",
+  "director": "Marko",
+  "home": 12,
+  "street": "Turdiqul",
+  "city": "Andijon"
+}
