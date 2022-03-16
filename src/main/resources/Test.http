@@ -27,3 +27,6 @@ Content-Type: application/json
   "street": "Turdiqul",
   "city": "Andijon"
 }
+
+###
+GET http://localhost/api/autoshop
