@@ -12,6 +12,7 @@ public interface GMProjection {
 
 //    Address getAddress();
 
+
     @Value("#{target.address.city + ' '  + target.address.street + ' ' + target.address.home}")
     String getAddressName();
 
