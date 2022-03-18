@@ -1,4 +1,4 @@
-###
+### gm start
 GET http://localhost/api/gm
 
 ###
@@ -28,5 +28,78 @@ Content-Type: application/json
   "city": "Andijon"
 }
 
+
 ###
-GET http://localhost/api/autoshop
+DELETE http://localhost:80/api/gm/99689a7f-177d-4e6c-8f6e-dbaa7458c713
+
+###gm tugadi
+
+### car start
+GET http://localhost:80/api/car
+
+###
+GET http://localhost:80/api/car/1d02b5a8-a3b3-4736-938b-e2d7bd25c1a8
+
+
+###
+POST http://localhost:80/api/car
+Content-Type: application/json
+
+{
+  "model": "Lacetti",
+  "year": 2019,
+  "price": 11000
+}
+
+###
+PUT http://localhost:80/api/car/1d02b5a8-a3b3-4736-938b-e2d7bd25c1a8
+Content-Type: application/json
+
+{
+  "model": "Lacetti",
+  "year": "",
+  "price": 5000
+}
+
+
+### car tugadi
+DELETE http://localhost:80/api/car/1d02b5a8-a3b3-4736-938b-e2d7bd25c1a8
+
+### autoshop start
+GET http://localhost:80/api/autoshop
+
+###
+GET http://localhost:80/api/autoshop/1
+
+###
+POST http://localhost:80/api/autoshop
+Content-Type: application/json
+
+{
+  "name": "Universal",
+  "gmId": "99689a7f-177d-4e6c-8f6e-dbaa7458c713",
+  "carIds": [
+    "1d02b5a8-a3b3-4736-938b-e2d7bd25c1a8",
+    "9f7271bc-9cba-47c9-aa20-e42bc6157afe",
+    "7ee1dff9-906e-4852-891c-38e798f44a9d"
+  ],
+  "home": "10A",
+  "street": "Beruniy",
+  "city": "Olmazor"
+}
+
+###
+PUT http://localhost:80/api/autoshop/1
+Content-Type: application/json
+
+{
+  "name": "Yangi Bozor",
+  "gmId": "99689a7f-177d-4e6c-8f6e-dbaa7458c713",
+  "carIds": [
+    "1d02b5a8-a3b3-4736-938b-e2d7bd25c1a8"
+  ],
+  "home": "11A",
+  "street": "Teruniy",
+  "city": "Yigmazor"
+}
+
