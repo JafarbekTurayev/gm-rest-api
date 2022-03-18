@@ -11,6 +11,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 public class AutoShopDTO {
+
+    //id integer qo'l bermoqchi bo'lsa 400 BAD Request
     private String name;
     private UUID gmId;
     private List<UUID> carIds;

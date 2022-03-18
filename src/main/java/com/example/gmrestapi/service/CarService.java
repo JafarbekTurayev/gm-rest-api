@@ -21,6 +21,9 @@ public class CarService {
 
     //ctrl +alt + l  cleand code
     public ApiResponse add(Car car) {
+
+        //uuid id bergan taqdirda bu xatosiz
+        //bunday xojat yo'q
 //        Car save = new Car();
 //        save.setModel(car.getModel());
 //        save.setPrice(car.getPrice());
@@ -30,7 +33,6 @@ public class CarService {
     }
 
     public ApiResponse edit(UUID id, Car car) {
-//        CarDTO cardto = (CarDTO) dto;
 
         Optional<Car> byId = carRepository.findById(id);
         if (byId.isEmpty()) return new ApiResponse("Car Not found!", false);
