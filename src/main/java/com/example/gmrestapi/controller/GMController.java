@@ -75,4 +75,12 @@ public class GMController {
         return ResponseEntity.ok().body("DELETED!");
     }
 
+
+    //clientga ko'rsatish un
+    @GetMapping("/forClient")
+    public HttpEntity<?> getAllForClient() {
+        ApiResponse response = gmService.getAll();
+        return ResponseEntity.ok().body(response);
+    }
+
 }

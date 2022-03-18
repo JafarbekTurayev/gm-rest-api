@@ -2,6 +2,9 @@
 GET http://localhost/api/gm
 
 ###
+GET http://localhost:80/api/gm/forClient
+
+###
 GET http://localhost/api/gm/99689a7f-177d-4e6c-8f6e-dbaa7458c713
 
 ###

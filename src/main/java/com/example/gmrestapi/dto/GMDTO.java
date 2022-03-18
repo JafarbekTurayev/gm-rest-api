@@ -11,7 +11,6 @@ public class GMDTO {
 
     private String corpName;
     private String director;
-
     private String home;
     private String street;
     private String city;

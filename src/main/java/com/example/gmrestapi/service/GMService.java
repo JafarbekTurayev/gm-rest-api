@@ -9,8 +9,10 @@ import com.example.gmrestapi.repository.GMRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -55,4 +57,27 @@ public class GMService {
 
         return new ApiResponse("Edited", true);
     }
+
+
+    public ApiResponse getAll() {
+        List<GM> all = gmRepository.findAllByActiveTrue();
+
+        //bu fordan tez ishlamaydi maqsad chiroyli kod yozish
+        List<GMDTO> collect = all.stream().map(this::gmToGmDTO).collect(Collectors.toList());
+
+        return new ApiResponse("Mana", true, collect);
+    }
+
+    //service metod orqali
+    public GMDTO gmToGmDTO(GM gm) {
+        return new GMDTO(
+                gm.getCorpName(),
+                gm.getDirector(),
+                gm.getAddress().getHome(),
+                gm.getAddress().getStreet(),
+                gm.getAddress().getCity()
+        );
+    }
+    //projection orqali olish ham mumkin
+
 }
