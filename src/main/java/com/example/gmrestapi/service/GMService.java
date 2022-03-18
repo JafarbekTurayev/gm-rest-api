@@ -4,6 +4,7 @@ import com.example.gmrestapi.dto.ApiResponse;
 import com.example.gmrestapi.dto.GMDTO;
 import com.example.gmrestapi.entity.Address;
 import com.example.gmrestapi.entity.GM;
+import com.example.gmrestapi.projection.GMProjection;
 import com.example.gmrestapi.repository.AddressRepository;
 import com.example.gmrestapi.repository.GMRepository;
 import lombok.RequiredArgsConstructor;
@@ -60,12 +61,15 @@ public class GMService {
 
 
     public ApiResponse getAll() {
-        List<GM> all = gmRepository.findAllByActiveTrue();
+
+        List<GMProjection> allByActiveTrue = gmRepository.findAllByActiveTrue();
+        return new ApiResponse("Mana royxat", true, allByActiveTrue);
 
         //bu fordan tez ishlamaydi maqsad chiroyli kod yozish
-        List<GMDTO> collect = all.stream().map(this::gmToGmDTO).collect(Collectors.toList());
-
-        return new ApiResponse("Mana", true, collect);
+//        List<GM> all = gmRepository.findAllByActiveTrue();
+//        List<GMDTO> collect = all.stream().map(this::gmToGmDTO).collect(Collectors.toList());
+//
+//        return new ApiResponse("Mana", true, collect);
     }
 
     //service metod orqali

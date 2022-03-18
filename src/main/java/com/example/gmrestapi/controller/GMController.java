@@ -29,9 +29,10 @@ public class GMController {
     //getAll
     @GetMapping
     public HttpEntity<?> getAll() {
-        List<GM> all = gmRepository.findAllByActiveTrue();
-        return ResponseEntity.ok().body(all);
+//        List<GM> all = gmRepository.findAllByActiveTrue();
+//        return ResponseEntity.ok().body(all);
         //response entity status header body
+        return null;
     }
 
     //getOne
