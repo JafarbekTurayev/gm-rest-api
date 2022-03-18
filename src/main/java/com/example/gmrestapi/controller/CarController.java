@@ -71,4 +71,21 @@ public class CarController {
         return ResponseEntity.ok().body("DELETED!");
     }
 
+
+    //Mashina active  @RequestParam("active") boolean status imkoni bor
+    @GetMapping("/change/{id}")
+    public HttpEntity<?> changeActive(@PathVariable UUID id, @RequestParam boolean status) {
+        Optional<Car> optionalCar = carRepository.findById(id);
+        Car car = optionalCar.get();
+        car.setActive(!car.isActive());
+        carRepository.save(car);
+        return ResponseEntity.ok().body(optionalCar.orElseThrow(RuntimeException::new));
+    }
+
+    @GetMapping("/byAutoshop/{id}")
+    public HttpEntity<?> getByAutoShop(@PathVariable Integer id) {
+        return ResponseEntity.ok().body(carRepository.getAllByAutoshop(id));
+    }
+
+
 }

@@ -9,4 +9,9 @@ import java.util.UUID;
 
 public interface AutoshopRepository extends JpaRepository<AutoShop, Integer> {
     List<AutoShop> findAllByActiveTrue();
+
+    //gm ga tegishli autoshoplar
+    List<AutoShop> findAllByGm_Id(UUID id);
+
+
 }

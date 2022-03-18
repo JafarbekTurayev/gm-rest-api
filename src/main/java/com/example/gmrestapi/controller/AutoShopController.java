@@ -74,4 +74,13 @@ public class AutoShopController {
         return ResponseEntity.ok().body("DELETED!");
     }
 
+    //Gm ga tegishli autoshoplar
+    @GetMapping("/byGmId/{id}")
+    public HttpEntity<?> getAllByGm(@PathVariable UUID id) {
+        return ResponseEntity.ok().body(autoshopRepository.findAllByGm_Id(id));
+    }
+
+
+
+
 }
